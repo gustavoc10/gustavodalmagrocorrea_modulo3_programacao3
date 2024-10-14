@@ -1,0 +1,14 @@
+body{
+    background-color: blue;
+font-family: "";
+
+}
+p{
+    color:blue;
+    font-size: 16px;
+}
+.cor_de_fundo_padrao{
+    color: blue;
+
+    font-weight: bold;
+}
