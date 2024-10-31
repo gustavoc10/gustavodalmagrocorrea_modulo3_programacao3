@@ -1,0 +1,28 @@
+input[type="password"]{
+    border: 2px red;
+
+
+} 
+p[title]:houver{
+    
+    background-color:yellow;
+    
+}
+
+ul li:first-child{
+    front-weight: bold;
+
+}
+ul li:last-child{
+    color: blue;
+
+}
+p::first-letter{
+    font-size: 200%;
+
+    color:green;
+
+}
+div.texto::after{
+    content: "adicionado via codigo "
+}
