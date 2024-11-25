@@ -1,0 +1,1 @@
+Linguagem de marcação texto para desenvolvimento de páginas web; linguagem de formatação de aparencia para desenvolvimento de paginas web; linguagens de compotamnento para plataforma  web(front_end): variaveis, expressão aritimetricas, relacionadas e logicas, estruturas de controle condicionasl e repetição, estruturas de dados unidimensionaise multidimensionais, Sub-rotinas.

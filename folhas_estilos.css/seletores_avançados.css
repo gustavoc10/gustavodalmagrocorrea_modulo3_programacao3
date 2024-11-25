@@ -1,0 +1,41 @@
+input[type="password"]{
+    border: 2px solid red;
+
+} 
+p[title]:hover{
+    
+    background-color:yellow;
+
+}
+
+ul li:first-child{
+    
+    font-weight: bold;
+
+}
+
+ul li:first-child{
+    color:blue;
+}
+
+p::first-letter{
+
+    font-size: 200%;
+
+    color:aqua;
+}
+
+div.texto::after{
+
+    content:"adicionado via codigo css";
+    color:blueviolet;
+
+}
+
+.texto span::before{
+
+    content:"texto";
+
+color:aqua;
+
+}
