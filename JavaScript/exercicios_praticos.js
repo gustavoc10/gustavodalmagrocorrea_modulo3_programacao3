@@ -11,3 +11,6 @@ while(controlDoLacoWhile<= NUMERO_MAXIMO_ITERACORES_LACO_WHILE){
     console.log("laço de repetição while exibindo o numero:",controlDoLacoWhile);
     controlDoLacoWhile++;
 }
+/* 3)
+Crie um programa que declare um array de inteiros e multiplique cada elemento de
+um array por 2 e exiba o resultado dessa multiplicação.
