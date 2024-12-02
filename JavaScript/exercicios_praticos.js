@@ -1,11 +1,13 @@
-// Declaração de variáveis
-var nome = "Meta AI"; // String
-let idade = 30; // Number (inteiro)
-const pi = 3.14; // Number (float)
+/* 2) 
+Crie um programa que conte os números de 1 até 10, e os imprima na console.
+Utilize todas as estruturas de repetição disponíveis no JavaScript.*/
+for(let controlDoLacoFor = 1; controlDoLacoFor<=10; controlDoLacoFor){
 
-// Impressão dos valores no console
-console.log("Nome:", nome);
-console.log("Idade:", idade);
-console.log("Pi:", pi);
-
-
+}
+console.log("\n");
+console NUMERO_MAXIMO_ITERACORES_LACO_WHILE=10
+let controlDoLacoWhile = 1;
+while(controlDoLacoWhile<= NUMERO_MAXIMO_ITERACORES_LACO_WHILE){
+    console.log("laço de repetição while exibindo o numero:",controlDoLacoWhile);
+    controlDoLacoWhile++;
+}
