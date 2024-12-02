@@ -13,4 +13,4 @@ while(controlDoLacoWhile<= NUMERO_MAXIMO_ITERACORES_LACO_WHILE){
 }
 /* 3)
 Crie um programa que declare um array de inteiros e multiplique cada elemento de
-um array por 2 e exiba o resultado dessa multiplicação.
+um array por 2 e exiba o resultado dessa multiplicação.*/
