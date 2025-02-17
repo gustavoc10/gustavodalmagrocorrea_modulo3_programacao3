@@ -19,4 +19,27 @@ body{
     font-size: 48px;
 
     cursor: pointer;
+
+    border: 2px solid saddlebrown;
+    
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    vertical-align: middle;
+
+    margin: 5px;
+
+}
+.celula:hover{
+    background-color: blue;
+
+    color: antiquewhite;
+}
+pontuacoes{
+    margin: 20px;
+
+    font-weight: bold;
 }
