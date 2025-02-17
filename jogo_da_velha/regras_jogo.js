@@ -1,66 +1,93 @@
-let tabuleiro = ['','','','','','','','','',];
-let jogadorAtual = "x"; 
+let tabuleiro    = ['','','','','','','','','',];
 
-let jogadorAtivo = true;
+let jogadorAtual = "X"; /* ou o 0 (ZERO)*/
 
-let pontuacaoJogador = 0;
+let jogoAtivo    = true;
+
+let pontuacaoJogador    = 0;
 let pontuacaoComputador = 0;
-let pontuacaoEmpate =0;
+let pontuacaoEmpate     = 0;
 
 const COMBINACOES_VITORIA = [
 
-       [0, 1, 2]
-       [3, 4, 5]       
-       [6, 7, 8]
-       
-       [0, 3, 6]
-       [1, 4, 7]
-       [2, 5, 8]
+    /*LINHAS*/
+    [0, 1, 2]
+    [3, 4, 5]
+    [6, 7, 8]
 
-       [0, 4, 8]
-       [2, 4, 6]
+   /*COLUNAS*/
+    [0, 3, 6]
+    [1, 4, 7]
+    [2, 5, 8]
+
+  /*VERTICAIS*/
+    [0, 4, 8]
+    [2, 4, 6]
 ];
 
-function fazerJogada(){
-    if(!JogoAtivo || tabuleiro[indiceCelula] !==""){
+function fazerJogada(indiceCelula){
+
+    if(!jogoAtivo || tabuleiro[indiceCelula] !== ""){
         return;
     }
 
-    tabuleiro[indiceCelula] = JogadorAtual;
+    tabuleiro[indiceCelula] = jogadorAtual;
 
-    redenrezarTabuleiro();
+    renderizarTabuleiro();
 
-    if (verificarVitoria()){
+    if(verificarVitoria()){
 
-        JogoAtivo = false;
+        jogoAtivo = false;
 
-        atualizarPontuacoes(JogadorAtual);
+        atualizarPontuacoes(jogadorAtual);
+
+        setTimeout(()=>{
+            alert(`${jogadorAtual} venceu!! `)
+        }, 100);
+
+        return
+
     }
-}
+    if (verificarEmpate()){
+        jogoAtivo = false;
+        atualizarPontuacoes("empate");
+        setTimeout(()=>{
+            alert("Empate!!")
+        reiniciarJogo();       
+        }, 100);
+        return;
+    }
+    jogadorAtual = jogadorAtual === "X" ? "0" : "X";
+};
 
-function redenrezarTabuleiro(){
+    
+
+
+function renderizarTabuleiro(){
+
     for(let i=0; i < tabuleiro.length; i++){
         const celula = document.getElementsByClassName("celula")[i];
 
         celula.textContent = tabuleiro[i];
-
-
-
     }
+
 }
 
 function verificarVitoria(){
-    return verificarVencedor() !==null;
+
+    return verificarVencedor() !== null;
 }
 
 function verificarVencedor(){
-    for(let combinacao of COMBINACOES_VITORIA){
-        const [a, b, c] = combinacao;
-        
-        if(tabuleiro[a] &&
-                tabuleiro[a] === tabuleiro[b] &&
-                tabuleiro[b] === tabuleiro[C]){
 
+    for(let combinacao of COMBINACOES_VITORIA){
+        
+        const [a, b, c] = combinacao;
+
+        if (tabuleiro[a] && 
+                tabuleiro[a] === tabuleiro[b] &&
+                tabuleiro[b] === tabuleiro[c]){
+                  
             return tabuleiro[a];
 
         }
@@ -70,37 +97,36 @@ function verificarVencedor(){
 }
 
 function atualizarPontuacoes(vencedor){
-    if(vencedor === "Empate"){
-        pontuacaoEmpates++;
 
+    if(vencedor === "empate" ){
+        pontuacaoEmpate++;
 
     } else if (vencedor === "X"){
-        pontuacaoJogador++; /*Jogador - Você*/
+        pontuacaoJogador++; /*JOGADOR - VOCÊ*/
 
-    } else{
+    } else {
         pontuacaoComputador++;
-
     }
 
-    redenrezarPontuacoes();
-    
+    renderizarPontuacoes();
 }
-    function redenrezarPontuacoes(){
 
-        document.getElementsById("pontuacao-jogador").textContent    = pontuacaoJogador;
-        document.getElementsById("pontuacao-computador").textContent = pontuacaoComputador;
-        document.getElementsById("pontuacao-empates").textContent    = pontuacaoEmpates;
-    }    
-    function verificarEmpate(){
-        return !tabuleiro.includes("");
-    }
-    
-    function reiniciarJogo(){
-        tabuleiro           = ['', '', '', '', '', '', '', '', '',];
-    
-        JogadorAtual = "x";
-    
-        JogoAtivo = true;
-    
-        redenrezarTabuleiro();
-    }
+function renderizarPontuacoes(){
+    document.getElementById("pontuacao-Jogador").textContent =pontuacaoJogador
+    document.getElementById("pontuacao-Computador").textContent =pontuacaoComputador
+    document.getElementById("pontuacao-Empate").textContent =pontuacaoEmpate
+}
+
+function verificarEmpate(){
+    return !tabuleiro.includes('');
+}
+
+function reiniciarJogo{
+    tabuleiro    = ['','','','','','','','','',];
+
+    jogadorAtual = "X";
+
+    jogoAtivo    = true;
+
+    renderizarTabuleiro();
+}
